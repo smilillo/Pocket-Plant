@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pocket Plant</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="display-flex justify-space-between align-center p-2">
+      <div>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <a class="navbar-item" href="/">Home</a>
+          <a class="navbar-item" href="/dashboard">Dashboard</a>
+          {{#if loggedIn}}
+          <a class="navbar-item" id="logout" href="/">Logout</a>
+          {{else}}
+          <a class="navbar-item" href="/login">Login</a>
+          {{/if}}
+        </nav>
+      </div>
+      <h1 class="has-text-weight-bold has-text-black">
+        <a href="/">Pocket Plant!</a>
+      </h1>
+    </header>
+    <main class="container container-fluid mt-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer>
+
+    </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
