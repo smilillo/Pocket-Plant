@@ -4,20 +4,20 @@ const signupFormHandler = async (event) => {
   const username = document.querySelector('#username-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
   console.log(username, password);
-  
+
   if (username && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username: username, password: password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.ok) {
-      console.log("It worked!")
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
+    // if (response.ok) {
+    //   console.log("It worked!")
+    document.location.replace('/dashboard');
+    // } else {
+    //   alert(response.statusText);
+    // }
   }
 };
 
