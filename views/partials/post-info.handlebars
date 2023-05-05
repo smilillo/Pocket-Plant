@@ -1,14 +1,15 @@
-<div class="card">
-    <div class="card-header">
-        <a href="/post/{{id}}">{{title}}</a>
-    </div>
-    <div>{{post_text}}</div>
-    <div>
-        <p>
+<div class="card" id="postFlexBox">
+    <div id="userID">
+         <img src="/images/pepe.jpg" style="width:50px"> 
+         {{!--we can change this to {{{user.image}}} later if we want. or remove --}}
+          <p>
             {{user.username}}
         </p>
-        <a href="post/{{id}}">{{comments.length}}</comments></a>
-
     </div>
-
+    <section id="postContent"></section>
+    <div class="card-header">
+        <a href="/post/{{id}}">{{title}}</a>
+      {{post_text}}  
+    </div>
+    
 </div>
