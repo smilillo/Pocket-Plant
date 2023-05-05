@@ -16,19 +16,21 @@
       <div>
       <div class="image">
         <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
-          <a class="navbar-item" href="/">Home</a>
-          <a class="navbar-item" href="/dashboard">Dashboard</a>
+          <a class="navbar-item" href="/" style="background:none">Home</a>
+          <a class="navbar-item" href="/dashboard" style="background:none">Dashboard</a>
+          <a class="navbar-item" href="/browse" style="background:none">Browse</a>
+          {{!-- 'browse' get request needs to be created still --}}
           {{#if loggedIn}}
-          <a class="navbar-item" id="logout" href="/">Logout</a>
+          <a class="navbar-item" id="logout" href="/" style="background:none">Logout</a>
           {{else}}
-          <a class="navbar-item" href="/login">Login</a>
+          <a class="navbar-item" href="/login" style="background:none">Login</a>
           {{/if}}
         </nav>
         </div>
       </div>
       <h1 id="title">
         <p id="welcome">Welcome to</p>
-        <a id="pocketPlant" href="/">{{title}}</a>
+        <a id="pocketPlant" href="/">Pocket Plant</a>
       </h1>
     </header>
     <main class="container container-fluid mt-5">
