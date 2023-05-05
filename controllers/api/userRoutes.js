@@ -34,6 +34,7 @@ router.post('/', (req, res) => {
     username: req.body.username,
     password: req.body.password
   })
+  console.log(username, password)
     .then(data => {
       req.session.save(() => {
         req.session.user_id = data.id;
