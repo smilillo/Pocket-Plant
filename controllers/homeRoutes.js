@@ -2,6 +2,9 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
+const fetch = require('node-fetch');
+const api_key_trefile = 'cbwakGNwU0TEpsliY_x3nHAE00zbMxyRrjI6WEupJ_M';
+const api_key_perenula = 'sk-o6oE64544d003e774763';
 
 router.get('/', (req, res) => {
   Post.findAll({
@@ -31,6 +34,18 @@ router.get('/', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     })
+});
+
+router.get('/search', async (req, res) => {
+  const query = req.query.category
+  console.log(query)
+  const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&q=${query}`);
+  const json = await response.json();
+  const plants = json.data;
+  res.render('plants', {
+    plants,
+    loggedIn: req.session.loggedIn
+  });
 });
 
 router.get('/post/:id', (req, res) => {

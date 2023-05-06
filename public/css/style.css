@@ -1,4 +1,4 @@
-/* header,
+header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
@@ -22,4 +22,4 @@
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
-} */
+} 
