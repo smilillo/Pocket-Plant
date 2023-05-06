@@ -1,4 +1,4 @@
-<div class="card" id="postFlexBox">
+<div class="card" id="postFlexBox"style="font-family: 'Questrial', sans-serif;">
     <div id="userID">
          <img src="/images/pepe.jpg" style="width:50px"> 
          {{!--we can change this to {{{user.image}}} later if we want. or remove --}}
@@ -7,9 +7,11 @@
         </p>
     </div>
     <section id="postContent"></section>
-    <div class="card-header">
-        <a href="/post/{{id}}">{{title}}</a>
-      {{post_text}}  
-    </div>
+        <a href="/post/{{id}}" style="font-size:1.25rem; color:black">{{title}}</a>
+        <div >
+          {{post_text}}  
+        </div>
+      
+    
     
 </div>
