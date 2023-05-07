@@ -1,5 +1,8 @@
 <div>
-  {{#each plants as |plant|}}
   <img src="{{plant.default_image.small_url}}" alt="">
-  {{/each}}
+  <h2>{{plant.common_name}}</h2>
+  <h3>Sunlight: {{plant.sunlight}}</h3>
+  <h3>Watering: {{plant.watering}}</h3>
+  <h4>Invasive: {{plant.invasive}}</h4>
+  <h4>indoor: {{plant.indoor}}</h4>
 </div>

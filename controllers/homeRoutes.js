@@ -25,9 +25,10 @@ router.get('/', (req, res) => {
   })
     .then(data => {
       const posts = data.map((post) => post.get({ plain: true }));
-      res.render('homepage', {
+      res.render('homepage', { 
         posts,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        // {title:'Pocket Plant!'}
       });
     })
     .catch(err => {
@@ -36,14 +37,26 @@ router.get('/', (req, res) => {
     })
 });
 
+//innital search
 router.get('/search', async (req, res) => {
   const query = req.query.category
   console.log(query)
-  const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&q=${query}`);
+  const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&page=1&q=${query}`);
   const json = await response.json();
   const plants = json.data;
   res.render('plants', {
     plants,
+    loggedIn: req.session.loggedIn
+  });
+});
+
+//clicked on plant
+router.get('/search/:id', async (req, res) => {
+  const response = await fetch(`https://perenual.com/api/species/details/${id}?key=${api_key_perenula}`);
+  const json = await response.json();
+  const plants = json.data;
+  res.render('plants', {
+    plant,
     loggedIn: req.session.loggedIn
   });
 });

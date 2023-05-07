@@ -12,9 +12,9 @@
 
 <body>
   <div class="wrapper">
-    <header class="display-flex justify-space-between align-center p-2">
-      <div>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+    <header class="display-flex justify-space-between align-center p-2" >
+      <div class="image">
+        <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
           <a class="navbar-item" href="/">Home</a>
           <a class="navbar-item" href="/dashboard">Dashboard</a>
           {{#if loggedIn}}
@@ -24,11 +24,16 @@
           {{/if}}
         </nav>
       </div>
-      <h1 class="has-text-weight-bold has-text-black">
-        <a href="/">Pocket Plant!</a>
+      <h1 id="title">
+        <p id="welcome">Welcome to</p>
+        <a id="pocketPlant" href="/">{{title}}</a>
       </h1>
     </header>
     <main class="container container-fluid mt-5">
+      <div>
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>

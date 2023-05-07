@@ -1,25 +1,71 @@
+<<<<<<< HEAD
 header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+=======
+main{
+  background-image:url('/images/contentBG.jpg');
+  background-size: 100%;
+  
+>>>>>>> 55061b143d1a5aa64c1a27cd454a4547b9903ee1
 }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+.image{
+  background-image:url('/images/plant-guide-1663941701.jpg') !important;
+  height:400px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+.navbar-item{
+color:white;
 }
 
+<<<<<<< HEAD
 .dollar-amount {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
 } 
+=======
+.navbar{
+  display:flex;
+  justify-content: space-evenly ;
+  background:none;
+ 
+}
+#title{
+    display:inline;
+  position:absolute;
+  top:200px;
+  padding-right:33%;
+  background:none;
+  color:white;
+}
+
+#welcome{
+  margin-bottom:none;
+  font-size:2rem;
+}
+
+#pocketPlant{
+font-size:4rem;
+color:white;
+  
+}
+
+#postFlexBox{
+  display:flex;
+  flex-direction:row;
+}
+
+#postContent{
+flex-direction:column;
+}
+
+.card{
+  border: 2px black solid;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+>>>>>>> 55061b143d1a5aa64c1a27cd454a4547b9903ee1
