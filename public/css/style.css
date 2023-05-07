@@ -37,11 +37,20 @@ font-family: 'Public Sans',sans-serif;
 .card{
   border: 2px black solid;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 8px;
 }
 
 .footerImg{
   width:10%;
+}
+
+.postTitle{
+  font-size:1.25rem; 
+  color:black;
+}
+
+#userID{
+  background-color: rgb(189, 221, 217);
 }
 
 #title{
@@ -65,14 +74,21 @@ font-family: 'Public Sans',sans-serif;
 #pocketPlant{
 font-size:6rem;
 color:white;
+}
+
+#tadPole{
+  width:100px;
+  position:fixed;
+  bottom:0;
+  right:0;
   
 }
 
-#postFlexBox{
-  display:flex;
-  flex-direction:row;
-}
-
-#postContent{
-flex-direction:column;
-}
+/* @media (max-width: 768px){
+  .image{
+    background-image:url('/images/plant-guide-1663941701.jpg') !important;
+    height:150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+} */
