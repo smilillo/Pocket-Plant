@@ -80,4 +80,9 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 })
 
+//renders the aboutUs.handlebars 
+router.get('/aboutUs', (req,res) => {
+  res.render('aboutUs');
+})
+
 module.exports = router;
