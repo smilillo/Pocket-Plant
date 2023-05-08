@@ -1,7 +1,23 @@
+<<<<<<< HEAD
+header,
+.project:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+=======
 main{
   background-image:url('/images/contentBG.jpg');
   background-size: 100%;
   
+>>>>>>> 55061b143d1a5aa64c1a27cd454a4547b9903ee1
+}
+
+footer{
+  color:white;
+  height:10%;
+  font-family: 'Public Sans',sans-serif;
+  padding:8px;
+  margin:8px;
+  display:grid;
+  justify-content:start;
 }
 
 footer{
@@ -27,6 +43,13 @@ font-family: 'Public Sans',sans-serif;
 
 }
 
+<<<<<<< HEAD
+.dollar-amount {
+  color: #056605;
+  font-weight: bold;
+  margin-left: -5px;
+} 
+=======
 .navbar{
   display:flex;
   justify-content: space-evenly ;
@@ -92,3 +115,4 @@ color:white;
     background-repeat: no-repeat;
   }
 } */
+>>>>>>> 55061b143d1a5aa64c1a27cd454a4547b9903ee1
