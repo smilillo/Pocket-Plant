@@ -28,7 +28,6 @@ router.get('/', (req, res) => {
       res.render('homepage', { 
         posts,
         loggedIn: req.session.loggedIn,
-        // {title:'Pocket Plant!'}
       });
     })
     .catch(err => {
@@ -39,12 +38,12 @@ router.get('/', (req, res) => {
 
 //innital search
 router.get('/search', async (req, res) => {
-  const query = req.query.category
+  const query = req.query.plant;
   console.log(query)
   const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&page=1&q=${query}`);
   const json = await response.json();
   const plants = json.data;
-  res.render('plants', {
+  res.render('usersearch', {
     plants,
     loggedIn: req.session.loggedIn
   });

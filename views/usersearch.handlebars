@@ -1,0 +1,6 @@
+<div>
+  {{#each plant as |this|}}
+  <img src="{{this.default_image.small_url}}" alt="" id ="{{this.id}}">
+  <p>{{this.common_name}}</p>
+  {{/each}}
+</div>

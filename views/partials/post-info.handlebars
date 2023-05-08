@@ -1,20 +1,9 @@
-<div class="card" id="postFlexBox">
-    <div id="userID">
-         <img src="/images/pepe.jpg" style="width:50px"> 
-         {{!--we can change this to {{{user.image}}} later if we want. or remove --}}
-          <p>
+<div class="card" style="font-family: 'Questrial', sans-serif;">
+          <div id="userID">
             {{user.username}}
-        </p>
-<<<<<<< HEAD
-            <a href="post/{{id}}">{{comments.length}}</comments></a>
-        
-=======
->>>>>>> 55061b143d1a5aa64c1a27cd454a4547b9903ee1
-    </div>
-    <section id="postContent"></section>
-    <div class="card-header">
-        <a href="/post/{{id}}">{{title}}</a>
-      {{post_text}}  
-    </div>
-    
+        </div>
+        <a href="/post/{{id}}" class="postTitle">{{title}}</a>
+        <div >
+          {{post_text}}  
+        </div>
 </div>
