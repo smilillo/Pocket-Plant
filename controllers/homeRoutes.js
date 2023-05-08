@@ -128,4 +128,9 @@ router.get('/about-us', (req, res) => {
   res.render('about-us');
 });
 
+//renders the aboutUs.handlebars 
+router.get('/aboutUs', (req,res) => {
+  res.render('aboutUs');
+})
+
 module.exports = router;

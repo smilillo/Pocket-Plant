@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-header,
-.project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-=======
 main{
   background-image:url('/images/contentBG.jpg');
   background-size: 100%;
-  
->>>>>>> 55061b143d1a5aa64c1a27cd454a4547b9903ee1
 }
 
 footer{
@@ -25,7 +18,6 @@ footer{
   height:10%;
   font-family: 'Public Sans',sans-serif;
   padding:8px;
-  margin:8px;
   display:grid;
   justify-content:start;
 }
@@ -35,6 +27,7 @@ footer{
   height:500px;
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 
 .navbar-item{
@@ -43,13 +36,6 @@ font-family: 'Public Sans',sans-serif;
 
 }
 
-<<<<<<< HEAD
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-} 
-=======
 .navbar{
   display:flex;
   justify-content: space-evenly ;
@@ -77,26 +63,32 @@ font-family: 'Public Sans',sans-serif;
 }
 
 #title{
-    display:inline;
+    display:flex;
+    justify-content:center;
   position:absolute;
   top:25%;
-  padding-left:25%;
+  right:0%;
+  left:0;
   background:none;
   color:white;
   font-family: 'Public Sans',sans-serif;
 }
 
+#title div{
+  display:flex;
+  flex-direction:column;
+  max-width:75%;
+}
+
 #welcome{
-  margin-bottom:none;
+  display:inline-block;
   font-size:2rem;
- position:relative;
- top:35px;
- left:15px;
 }
 
 #pocketPlant{
 font-size:6rem;
 color:white;
+line-height:4.5rem;
 }
 
 #tadPole{
@@ -107,12 +99,7 @@ color:white;
   
 }
 
-/* @media (max-width: 768px){
-  .image{
-    background-image:url('/images/plant-guide-1663941701.jpg') !important;
-    height:150px;
-    background-size: cover;
-    background-repeat: no-repeat;
+@media screen and (width<768px){
+  #pocketPlant{
+    font-size:4rem;
   }
-} */
->>>>>>> 55061b143d1a5aa64c1a27cd454a4547b9903ee1
