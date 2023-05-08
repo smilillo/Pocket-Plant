@@ -22,10 +22,10 @@ router.get('/', (req, res) => {
   })
     .then(data => {
       const posts = data.map((post) => post.get({ plain: true }));
-      res.render('homepage', { 
+      res.render('homepage', {
         posts,
         loggedIn: req.session.loggedIn,
-        {title:'Pocket Plant!'}
+        title: 'Pocket Plant!', //got rid of {}
       });
     })
     .catch(err => {

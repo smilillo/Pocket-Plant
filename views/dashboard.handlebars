@@ -1,4 +1,9 @@
-<h2>Your Dashboard</h2>
+<h2>Dashboard</h2>
+<div>
+    {{!-- not yet working, path error --}}
+    <a class="newpost-link" href="/dashboard/new"><button class="button" type="submit">Post
+            Something!</button></a>
+</div>
 {{#if posts.length}}
 <section>
     {{#each posts as |post|}}
@@ -8,11 +13,6 @@
 {{else}}
 <p>Nothing has been posted yet</p>
 {{/if}}
-<div>
-    {{!-- not yet working, path error --}}
-    <a class="newpost-link" href="/dashboard/new"><button>Post Something!</button></a>
-    <a class="editpost-link" href="/edit-post"><button>Edit Post</button></a>
-</div>
 
 {{!--
 <script src="/js/new-post.js"></script> --}}

@@ -12,23 +12,24 @@
 
 <body>
   <div class="wrapper">
-    <header class="display-flex justify-space-between align-center p-2" >
+    <header class="display-flex justify-space-between align-center p-2">
       <div>
-      <div class="image">
-        <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
-          <a class="navbar-item" href="/">Home</a>
-          <a class="navbar-item" href="/dashboard">Dashboard</a>
-          {{#if loggedIn}}
-          <a class="navbar-item" id="logout" href="/">Logout</a>
-          {{else}}
-          <a class="navbar-item" href="/login">Login</a>
-          {{/if}}
-        </nav>
+        <div class="image">
+          <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
+            <a class="navbar-item" href="/"><strong>Home</strong></a>
+            <a class="navbar-item" href="/dashboard"><strong>Dashboard</strong></a>
+             <a class="navbar-item" href="/garden"><strong>Garden</strong></a>
+            {{#if loggedIn}}
+            <a class="navbar-item" id="logout" href="/"><strong>Logout</strong></a>
+            {{else}}
+            <a class="navbar-item" href="/login"><strong>Login</strong></a>
+            {{/if}}
+          </nav>
         </div>
       </div>
       <h1 id="title">
         <p id="welcome">Welcome to</p>
-        <a id="pocketPlant" href="/">{{title}}</a>
+        <a id="pocketPlant" href="/">Pocket Plant!!</a>
       </h1>
     </header>
     <main class="container container-fluid mt-5">

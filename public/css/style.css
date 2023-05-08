@@ -1,57 +1,69 @@
-main{
-  background-image:url('/images/contentBG.jpg');
-  background-size: 100%;
-  
+:root {
+  --dark: rgb(0, 0, 0);
+  --light: rgb(255, 255, 255);
+  --green: rgb(0, 104, 35);
+  /* --font:  */
 }
 
-.image{
-  background-image:url('/images/plant-guide-1663941701.jpg') !important;
-  height:400px;
+main {
+  /* background-image: url('/images/contentBG.jpg');
+  background-size: 100%; */
+
+}
+
+.image {
+  background-image: url('/images/plant-guide-1663941701.jpg') !important;
+  height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.navbar-item{
-color:white;
+.navbar-item {
+  color: var(--light);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
 }
 
-.navbar{
-  display:flex;
-  justify-content: space-evenly ;
-  background:none;
- 
-}
-#title{
-    display:inline;
-  position:absolute;
-  top:200px;
-  padding-right:33%;
-  background:none;
-  color:white;
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  background: none;
 }
 
-#welcome{
-  margin-bottom:none;
-  font-size:2rem;
+.navbar a:hover {
+  color: var(--green)
 }
 
-#pocketPlant{
-font-size:4rem;
-color:white;
-  
+#title {
+  display: inline;
+  position: absolute;
+  top: 200px;
+  padding-right: 33%;
+  background: none;
+  color: var(--light);
 }
 
-#postFlexBox{
-  display:flex;
-  flex-direction:row;
+#welcome {
+  margin-bottom: none;
+  font-size: 2rem;
 }
 
-#postContent{
-flex-direction:column;
+#pocketPlant {
+  font-size: 4rem;
+  color: var(--light);
 }
 
-.card{
-  border: 2px black solid;
+#postFlexBox {
+  display: flex;
+  flex-direction: row;
+}
+
+#postContent {
+  flex-direction: column;
+}
+
+.card {
+  border: 2px var(--dark) solid;
   margin-bottom: 10px;
   padding: 10px;
 }
