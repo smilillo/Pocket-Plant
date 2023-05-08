@@ -11,27 +11,32 @@ main {
 
 }
 
-.image {
-  background-image: url('/images/plant-guide-1663941701.jpg') !important;
-  height: 400px;
+footer{
+  color:white;
+  height:10%;
+  font-family: 'Public Sans',sans-serif;
+  padding:8px;
+  margin:8px;
+  display:grid;
+  justify-content:start;
+}
+
+.image{
+  background-image:url('/images/plant-guide-1663941701.jpg') !important;
+  height:500px;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.navbar-item {
-  color: var(--light);
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 30px;
+.navbar-item{
+color:white;
+font-family: 'Public Sans',sans-serif;
 }
 
 .navbar {
   display: flex;
   justify-content: space-evenly;
   background: none;
-}
-
-.navbar a:hover {
-  color: var(--green)
 }
 
 #title {
@@ -62,8 +67,52 @@ main {
   flex-direction: column;
 }
 
-.card {
-  border: 2px var(--dark) solid;
+.card{
+  border: 2px black solid;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 8px;
+}
+
+.footerImg{
+  width:10%;
+}
+
+.postTitle{
+  font-size:1.25rem; 
+  color:black;
+}
+
+#userID{
+  background-color: rgb(189, 221, 217);
+}
+
+#title{
+    display:inline;
+  position:absolute;
+  top:25%;
+  padding-left:25%;
+  background:none;
+  color:white;
+  font-family: 'Public Sans',sans-serif;
+}
+
+#welcome{
+  margin-bottom:none;
+  font-size:2rem;
+ position:relative;
+ top:35px;
+ left:15px;
+}
+
+#pocketPlant{
+font-size:6rem;
+color:white;
+}
+
+#tadPole{
+  width:100px;
+  position:fixed;
+  bottom:0;
+  right:0;
+  
 }

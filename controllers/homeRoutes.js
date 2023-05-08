@@ -24,8 +24,7 @@ router.get('/', (req, res) => {
       const posts = data.map((post) => post.get({ plain: true }));
       res.render('homepage', {
         posts,
-        loggedIn: req.session.loggedIn,
-        title: 'Pocket Plant!', //got rid of {}
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {
@@ -79,6 +78,27 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   res.render('signup');
-})
+});
+
+router.get('/chat-bot', (req, res) => {
+  res.render('chat-bot')
+});
+
+router.post('/chat', (req, res) => {
+  const messages = req.body.messages;
+  const model = req.body.model;
+  const temp = req.body.temp;
+
+  const completion = openaiapi.createChatCompletion({
+      model: model,
+      messages: messages,
+      temperature: temp,
+  });
+  res.status(200).json({ result: completion.data.choices });
+});
+
+router.get('/about-us', (req, res) => {
+  res.render('about-us');
+});
 
 module.exports = router;
