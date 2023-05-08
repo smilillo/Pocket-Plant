@@ -41,6 +41,7 @@ const configuration = new openai.Configuration({
 const openaiapi = new openai.OpenAIApi(configuration);
 
 app.use(session(sess));
+// app.use(cors);
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
@@ -53,5 +54,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log(`Server is listening at http://localhost:${PORT}/`));
 });

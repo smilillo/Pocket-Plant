@@ -1,7 +1,16 @@
 main{
   background-image:url('/images/contentBG.jpg');
   background-size: 100%;
-  
+}
+
+footer{
+  color:white;
+  height:10%;
+  font-family: 'Public Sans',sans-serif;
+  padding:8px;
+  margin:8px;
+  display:grid;
+  justify-content:start;
 }
 
 footer{
@@ -94,4 +103,3 @@ line-height:4.5rem;
   #pocketPlant{
     font-size:4rem;
   }
-}
