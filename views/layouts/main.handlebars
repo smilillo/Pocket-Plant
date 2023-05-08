@@ -7,36 +7,48 @@
   <title>Pocket Plant</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&family=Questrial&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
 <body>
   <div class="wrapper">
-    <header class="display-flex justify-space-between align-center p-2" >
+    <header class="display-flex justify-space-between align-center p-2" style="padding:0px">
       <div>
-      <div class="image">
-        <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
-          <a class="navbar-item" href="/">Home</a>
-          <a class="navbar-item" href="/dashboard">Dashboard</a>
-          {{#if loggedIn}}
-          <a class="navbar-item" id="logout" href="/">Logout</a>
-          {{else}}
-          <a class="navbar-item" href="/login">Login</a>
-          {{/if}}
-        </nav>
+        <div class="image">
+          <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
+            <a class="navbar-item" href="/" style="background:none">Home</a>
+            <a class="navbar-item" href="/dashboard" style="background:none">Dashboard</a>
+            <a class="navbar-item" href="/browse" style="background:none">Browse</a>
+            {{!-- 'browse' get request needs to be created still --}}
+            {{#if loggedIn}}
+            <a class="navbar-item" id="logout" href="/" style="background:none">Logout</a>
+            {{else}}
+            <a class="navbar-item" href="/login" style="background:none">Login</a>
+            {{/if}}
+          </nav>
         </div>
       </div>
       <h1 id="title">
         <p id="welcome">Welcome to</p>
-        <a id="pocketPlant" href="/">{{title}}</a>
+        <a id="pocketPlant" href="/">Pocket Plant</a>
       </h1>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-
+    <footer style="background-color:rgb(205, 125, 4)">
+      <img class="footerImg" src="/images/Pocket-Plant-Logo.png">
+      Keeping plant care in your back pocket.<br>
+      <a href="/aboutUs">About the creators</a>
+      {{!-- need an aboutUs get route --}}
+      <a href="/chatBot"><img src="/images/tadPole.jpg" id="tadPole"></a>
+      
     </footer>
   </div>
 
