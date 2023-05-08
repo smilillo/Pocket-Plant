@@ -4,6 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const openai = require('openai');
+
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -29,6 +31,14 @@ const sess = {
     db: sequelize
   })
 };
+
+//Configure OpenAI
+const configuration = new openai.Configuration({
+  organization: process.env.OPENAI_ORG,
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+const openaiapi = new openai.OpenAIApi(configuration);
 
 app.use(session(sess));
 
