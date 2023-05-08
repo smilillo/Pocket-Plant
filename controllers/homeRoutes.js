@@ -54,7 +54,7 @@ router.get('/search', async (req, res) => {
 router.get('/search/:id', async (req, res) => {
   const response = await fetch(`https://perenual.com/api/species/details/${id}?key=${api_key_perenula}`);
   const json = await response.json();
-  const plants = json.data;
+  const plant = json.data;
   res.render('plants', {
     plant,
     loggedIn: req.session.loggedIn
