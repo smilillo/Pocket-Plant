@@ -1,36 +1,23 @@
-:root {
-  --dark: rgb(0, 0, 0);
-  --light: rgb(255, 255, 255);
-  --green: rgb(0, 104, 35);
-  /* --font:  */
+footer {
+  color: white;
+  height: 10%;
+  font-family: 'Public Sans', sans-serif;
+  padding: 8px;
+  margin: 8px;
+  display: grid;
+  justify-content: start;
 }
 
-main {
-  /* background-image: url('/images/contentBG.jpg');
-  background-size: 100%; */
-
-}
-
-footer{
-  color:white;
-  height:10%;
-  font-family: 'Public Sans',sans-serif;
-  padding:8px;
-  margin:8px;
-  display:grid;
-  justify-content:start;
-}
-
-.image{
-  background-image:url('/images/plant-guide-1663941701.jpg') !important;
-  height:500px;
+.image {
+  background-image: url('/images/plant-guide-1663941701.jpg') !important;
+  height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.navbar-item{
-color:white;
-font-family: 'Public Sans',sans-serif;
+.navbar-item {
+  color: white;
+  font-family: 'Public Sans', sans-serif;
 }
 
 .navbar {
@@ -67,52 +54,52 @@ font-family: 'Public Sans',sans-serif;
   flex-direction: column;
 }
 
-.card{
+.card {
   border: 2px black solid;
   margin-bottom: 10px;
   padding: 8px;
 }
 
-.footerImg{
-  width:10%;
+.footerImg {
+  width: 10%;
 }
 
-.postTitle{
-  font-size:1.25rem; 
-  color:black;
+.postTitle {
+  font-size: 1.25rem;
+  color: black;
 }
 
-#userID{
-  background-color: rgb(189, 221, 217);
+#userID {
+  background-color: rgb(164, 204, 172);
 }
 
-#title{
-    display:inline;
-  position:absolute;
-  top:25%;
-  padding-left:25%;
-  background:none;
-  color:white;
-  font-family: 'Public Sans',sans-serif;
+#title {
+  display: inline;
+  position: absolute;
+  top: 25%;
+  padding-left: 25%;
+  background: none;
+  color: white;
+  font-family: 'Public Sans', sans-serif;
 }
 
-#welcome{
-  margin-bottom:none;
-  font-size:2rem;
- position:relative;
- top:35px;
- left:15px;
+#welcome {
+  margin-bottom: none;
+  font-size: 2rem;
+  position: relative;
+  top: 35px;
+  left: 15px;
 }
 
-#pocketPlant{
-font-size:6rem;
-color:white;
+#pocketPlant {
+  font-size: 6rem;
+  color: white;
 }
 
-#tadPole{
-  width:100px;
-  position:fixed;
-  bottom:0;
-  right:0;
-  
+#tadPole {
+  width: 100px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
 }

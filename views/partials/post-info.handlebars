@@ -1,31 +1,11 @@
 <div class="box">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-64x64">
-        <img src="/images/pepe.jpg" alt="Image">
-      </figure>
+  <div class="card" style="font-family: 'Questrial', sans-serif;">
+    <div id="userID">
+      {{user.username}}
     </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong>{{user.username}}</strong>
-          <br>
-          <a href="/post/{{id}}">{{title}}</a>
-        <div>
-          {{post_text}}
-        </div>
-        <i class="fa-solid fa-heart"></i>
-        </p>
-      </div>
+    <a href="/post/{{id}}" class="postTitle">{{title}}</a>
+    <div>
+      {{post_text}}
     </div>
-  </article>
-<div class="card" style="font-family: 'Questrial', sans-serif;">
-          <div id="userID">
-            {{user.username}}
-        </div>
-        <a href="/post/{{id}}" class="postTitle">{{title}}</a>
-        <div >
-          {{post_text}}  
-        </div>
-</div>
+  </div>

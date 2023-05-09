@@ -16,39 +16,39 @@
 </head>
 
 <body>
-  
-    <header class="display-flex justify-space-between align-center p-2" style="padding:0px">
-      <div>
-        <div class="image">
-          <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
-            <a class="navbar-item" href="/" style="background:none">Home</a>
-            <a class="navbar-item" href="/dashboard" style="background:none">Dashboard</a>
-            <a class="navbar-item" href="/browse" style="background:none">Browse</a>
-            <a class="navbar-item" href="/about-us" style="background:none">About Us</a>
-            {{!-- 'browse' get request needs to be created still --}}
-            {{#if loggedIn}}
-            <a class="navbar-item" id="logout" href="/" style="background:none">Logout</a>
-            {{else}}
-            <a class="navbar-item" href="/login" style="background:none">Login</a>
-            {{/if}}
-          </nav>
-        </div>
+
+  <header class="display-flex justify-space-between align-center p-2" style="padding:0px">
+    <div>
+      <div class="image">
+        <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
+          <a class="navbar-item" href="/" style="background:none">Home</a>
+          <a class="navbar-item" href="/dashboard" style="background:none">Dashboard</a>
+          <a class="navbar-item" href="/browse" style="background:none">Browse</a>
+          <a class="navbar-item" href="/about-us" style="background:none">About Us</a>
+          {{!-- 'browse' get request needs to be created still --}}
+          {{#if loggedIn}}
+          <a class="navbar-item" id="logout" href="/" style="background:none">Logout</a>
+          {{else}}
+          <a class="navbar-item" href="/login" style="background:none">Login</a>
+          {{/if}}
+        </nav>
       </div>
-      <h1 id="title">
-        <p id="welcome">Welcome to</p>
-        <a id="pocketPlant" href="/">Pocket Plant</a>
-      </h1>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer style="background-color:#cd7d04">
-      <img class="footerImg" src="/images/pocket-plant-logo.png">
-      Keeping plant care in your back pocket.<br>
-      <a href="/about-us">About the creators</a>
-      <a href="/chat-bot"><img src="/images/tadPole.jpg" id="tadPole"></a>
-    </footer>
+    </div>
+    <h1 id="title">
+      <p id="welcome">Welcome to</p>
+      <a id="pocketPlant" href="/"><strong>Pocket Plant</strong></a>
+    </h1>
+  </header>
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+  <footer style="background-color:#cd7d04">
+    <img class="footerImg" src="/images/pocket-plant-logo.png">
+    Keeping plant care in your back pocket.<br>
+    <a href="/about-us">About the creators</a>
+    <a href="/chat-bot"><img src="/images/tadPole.jpg" id="tadPole"></a>
+  </footer>
   </div>
 
   <!-- Render script for logged in users only -->

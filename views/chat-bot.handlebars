@@ -1,20 +1,31 @@
-    <div class="has-text-centered container mt-5 w-50">
-        <h1 class="title" id="userID">Ask Tad Pole!</h1>
-        <div class="card has-text-centered">
+<div class="has-text-centered container mt-5">
+    <div id="userID" class="section">
+        <div>
+            {{!-- <img src="images/tadPole.jpg" alt="Tad" width="150" /> --}}
+            <h1 class="title"><strong>Ask Tad Pole!</strong></h1>
+            <div class="subtitle is-4">
+                <h2> For any questions that you do not wish to post about or desire an immediate response
+                    to, we have our friendly AI chatbot, Tad Pole. Tad is always ready to help you learn about the care
+                    of any plants that
+                    interest you!</h2>
+            </div>
+        </div>
+        <div class=" section input-group">
+            <textarea id="user-input" class="form-control textarea is-large is-success" rows='7'
+                placeholder="For Example... Ask Tad how to take care of a Tomato Plant" rows="3"></textarea>
+        </div>
+        <div class="has-text-centered">
+            <button id="submit" type="button" class="button">Ask Tad</button>
+            <div id="spinner" class="spinner-grow text-primary visually-hidden mt-2" role="status">
+                <i class="fa-regular fa-droplet fa-bounce"></i>
+            </div>
+        </div>
+        <div class="section card has-text-centered">
             <div class="card-header">
                 Chat History
             </div>
             <ul id="chat-history" class="list-group list-group-flush">
             </ul>
-        </div>
-        <div class="input-group">
-            <textarea id="user-input" class="form-control textarea" rows="3"></textarea>
-        </div>
-        <div class="has-text-centered">
-            <button id="submit" type="button" class="button" >Ask Tad</button>
-            <div id="spinner" class="spinner-grow text-primary visually-hidden mt-2" role="status">
-                <i class="fa-regular fa-droplet fa-bounce"></i>
-            </div>
         </div>
     </div>
 
