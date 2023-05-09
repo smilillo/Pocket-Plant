@@ -30,6 +30,7 @@ const generateResponse = async () => {
     });
 
     const responseData = await response.json();
+    console.log(responseData);
     const message = responseData.result[0].message.content;
 
     //Store our previous messages

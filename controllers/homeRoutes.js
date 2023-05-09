@@ -144,6 +144,8 @@ const openaiapi = new openai.OpenAIApi(configuration);
     res.status(200).json({ result: completion.data.choices });
 });
 
+
+
 router.get('/about-us', (req, res) => {
   res.render('about-us');
 });
