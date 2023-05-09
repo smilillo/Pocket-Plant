@@ -1,3 +1,4 @@
+// ChatBot Tutorial Used - https://danielkhv.com/blog/createyourownchatbot
 //Get reference to our submit button and chatbot field
 const submit = document.getElementById("submit");
 const responseField = document.getElementById("response");
@@ -29,9 +30,7 @@ const generateResponse = async () => {
     });
 
     const responseData = await response.json();
-    console.log(responseData);
     const message = responseData.result[0].message.content;
-    console.log(message);
 
     //Store our previous messages
     promptResponses.push({question: input, response: message});
