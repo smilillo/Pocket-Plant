@@ -16,7 +16,6 @@ const generateResponse = async () => {
     // loading.classList.remove("visually-hidden");
     // submit.classList.add("visually-hidden");
     const input = userInput.value;
-    console.log(userInput.value);
     const response = await fetch('/chat', {
         method: 'POST',
         body: JSON.stringify({
