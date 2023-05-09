@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
     })
 });
 
-//innital search
+//inital search
 router.get('/search', async (req, res) => {
   const query = req.query.plant;
   const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&page=1&q=${query}`);
@@ -68,7 +68,7 @@ router.get('/search/:id', async (req, res) => {
 
 router.get('/post/:id', (req, res) => {
   Post.findOne({
-    where: {id: req.params.id},
+    where: { id: req.params.id },
     attributes: [
       'id', 'title', 'post_text'
     ],
@@ -118,37 +118,35 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/chat-bot', (req, res) => {
-  res.render('chat-bot')
+  res.render('chat-bot');
+})
+
+router.post('/chat',async (req, res) => {
+
+//Configure OpenAI
+const configuration = new openai.Configuration({
+  organization: process.env.OPENAI_ORG,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
-router.post('/chat', async (req, res) => {
-  //Configure OpenAI
-  const configuration = new openai.Configuration({
-    organization: process.env.OPENAI_ORG,
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-
-  const openaiapi = new openai.OpenAIApi(configuration);
-
-  const messages = req.body.messages;
-  const model = req.body.model;
-  const temp = req.body.temp;
-
-  const completion = await openaiapi.createChatCompletion({
-      model: model,
-      messages: messages,
-      temperature: temp,
-  });
-  res.status(200).json({ result: completion.data.choices });
+const openaiapi = new openai.OpenAIApi(configuration);
+  
+    const messages = req.body.messages;
+    const model = req.body.model;
+    const temp = req.body.temp;
+  
+    const completion = await openaiapi.createChatCompletion({
+        model: model,
+        messages: messages,
+        temperature: temp,
+    });
+    res.status(200).json({ result: completion.data.choices });
 });
+
+
 
 router.get('/about-us', (req, res) => {
   res.render('about-us');
 });
-
-//renders the aboutUs.handlebars 
-router.get('/aboutUs', (req,res) => {
-  res.render('aboutUs');
-})
 
 module.exports = router;
