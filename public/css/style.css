@@ -49,6 +49,10 @@ font-family: 'Public Sans',sans-serif;
   padding: 8px;
 }
 
+.table{
+  justify-content: center;
+}
+
 .footerImg{
   width:10%;
 }
