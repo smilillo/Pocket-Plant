@@ -5,9 +5,9 @@ const withAuth = require('../utils/auth');
 const fetch = require('node-fetch');
 const openai = require('openai');
 require('dotenv').config();
-// const api_key_perenula = 'sk-o6oE64544d003e774763'; // key for josh
+const api_key_perenula = 'sk-f8iD645a9dc7bada0763'; // key for josh
 // const api_key_perenula = 'sk-mQRG6448780fbced2643'; // key for sofia
-const api_key_perenula = 'sk-WQY0645999959cbd7820'; // key for conner
+// const api_key_perenula = 'sk-WQY0645999959cbd7820'; // key for conner
 
 router.get('/', (req, res) => {
   Post.findAll({
@@ -42,10 +42,12 @@ router.get('/', (req, res) => {
 //inital search
 router.get('/search', async (req, res) => {
   const query = req.query.plant;
+  // console.log("query: ", query)
   const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&page=1&q=${query}`);
   const json = await response.json();
+  // console.log("json: ", json)
   const plants = json.data;
-  // console.log(plants)
+  // console.log("plants: ", plants)
   res.render('usersearch', {
     plants,
     loggedIn: req.session.loggedIn
