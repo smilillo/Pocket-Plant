@@ -3,8 +3,8 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const fetch = require('node-fetch');
-const api_key_trefile = 'cbwakGNwU0TEpsliY_x3nHAE00zbMxyRrjI6WEupJ_M';
-const api_key_perenula = 'sk-o6oE64544d003e774763';
+// const api_key_perenula = 'sk-o6oE64544d003e774763'; // key for josh
+const api_key_perenula = 'sk-mQRG6448780fbced2643'; // key for sofia
 
 router.get('/', (req, res) => {
   Post.findAll({
@@ -39,10 +39,10 @@ router.get('/', (req, res) => {
 //innital search
 router.get('/search', async (req, res) => {
   const query = req.query.plant;
-  console.log(query)
   const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&page=1&q=${query}`);
   const json = await response.json();
   const plants = json.data;
+  // console.log(plants)
   res.render('usersearch', {
     plants,
     loggedIn: req.session.loggedIn
@@ -51,7 +51,8 @@ router.get('/search', async (req, res) => {
 
 //clicked on plant
 router.get('/search/:id', async (req, res) => {
-  const response = await fetch(`https://perenual.com/api/species/details/${id}?key=${api_key_perenula}`);
+  const response = await fetch(`https://perenual.com/api/species/details/${req.id}?key=${api_key_perenula}`);
+  console.log(response)
   const json = await response.json();
   const plant = json.data;
   res.render('plants', {
