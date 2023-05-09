@@ -1,6 +1,11 @@
-<div class="card">
+
+<div class="userSearch">
   {{#each plants as |this|}}
+  {{#if this.default_image.small_url}}
+  <a href='/search/{{this.id}}'>
   <img src="{{this.default_image.small_url}}" alt="" id ="{{this.id}}" class="picRes">
-  <a href='/search/{{this.id}}'><p>{{this.common_name}}</p></a>
+  <p>{{this.common_name}}</p>
+  </a>
+  {{/if}}
   {{/each}}
 </div>
