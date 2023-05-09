@@ -2,9 +2,12 @@
 {{#if posts.length}}
 <section>
     {{#each posts as |post|}}
-    {{post-info post}}
+    {{> post-info post}}
+    {{/each}}
+    {{#each comments as |comment|}}
+    {{> comments comment}}
+    {{/each}}
 </section>
-{{/each}}
 {{else}}
 <p>Nothing has been posted yet</p>
 {{/if}}

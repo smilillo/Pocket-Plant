@@ -3,9 +3,12 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const fetch = require('node-fetch');
+const openai = require('openai');
+require('dotenv').config();
 // const api_key_perenula = 'sk-o6oE64544d003e774763'; // key for josh
 // const api_key_perenula = 'sk-mQRG6448780fbced2643'; // key for sofia
 const api_key_perenula = 'sk-WQY0645999959cbd7820'; // key for conner
+
 router.get('/', (req, res) => {
   Post.findAll({
     include: [
@@ -64,11 +67,15 @@ router.get('/search/:id', async (req, res) => {
 });
 
 router.get('/post/:id', (req, res) => {
-  Post.findOne(req.params.id, {
+  Post.findOne({
+    where: {id: req.params.id},
+    attributes: [
+      'id', 'title', 'post_text'
+    ],
     include: [
       {
         model: User,
-        attributes: ['name'],
+        attributes: ['username'],
       },
       {
         model: Comment,
@@ -114,12 +121,20 @@ router.get('/chat-bot', (req, res) => {
   res.render('chat-bot')
 });
 
-router.post('/chat', (req, res) => {
+router.post('/chat', async (req, res) => {
+  //Configure OpenAI
+  const configuration = new openai.Configuration({
+    organization: process.env.OPENAI_ORG,
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+
+  const openaiapi = new openai.OpenAIApi(configuration);
+
   const messages = req.body.messages;
   const model = req.body.model;
   const temp = req.body.temp;
 
-  const completion = openaiapi.createChatCompletion({
+  const completion = await openaiapi.createChatCompletion({
       model: model,
       messages: messages,
       temperature: temp,

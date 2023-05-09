@@ -79,7 +79,7 @@ router.post('/', (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
   Post.update({
     title: req.body.title,
-    post_content: req.body.post_content,
+    post_text: req.body.post_text,
     user_id: 1
   },
     {
@@ -102,7 +102,7 @@ router.put('/:id', withAuth, (req, res) => {
 
 // delete post route
 router.delete('/:id', withAuth, (req, res) => {
-  Project.destroy({
+  Post.destroy({
     where: {
       id: req.params.id,
       user_id: req.session.user_id,

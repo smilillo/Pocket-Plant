@@ -58,6 +58,16 @@ font-family: 'Public Sans',sans-serif;
   color:black;
 }
 
+.searchResults{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchImage{
+  width: 200px;
+}
+
 #userID{
   background-color: rgb(189, 221, 217);
 }
@@ -103,3 +113,4 @@ line-height:4.5rem;
   #pocketPlant{
     font-size:4rem;
   }
+}

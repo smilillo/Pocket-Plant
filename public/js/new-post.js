@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
     console.log(title, content);
 
 
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify({ title: title, content: content }),
         headers: {
