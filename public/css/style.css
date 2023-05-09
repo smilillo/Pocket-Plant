@@ -8,16 +8,6 @@ footer{
   height:10%;
   font-family: 'Public Sans',sans-serif;
   padding:8px;
-  margin:8px;
-  display:grid;
-  justify-content:start;
-}
-
-footer{
-  color:white;
-  height:10%;
-  font-family: 'Public Sans',sans-serif;
-  padding:8px;
   display:grid;
   justify-content:start;
 }
@@ -33,14 +23,12 @@ footer{
 .navbar-item{
 color:white;
 font-family: 'Public Sans',sans-serif;
-
 }
 
 .navbar{
   display:flex;
   justify-content: space-evenly ;
   background:none;
- 
 }
 
 .card{
