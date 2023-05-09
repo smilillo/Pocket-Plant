@@ -31,6 +31,10 @@
             {{else}}
             <a class="navbar-item" href="/login" style="background:none">Login</a>
             {{/if}}
+            <div>{{!-- search bar --}}
+              <input type="text" placeholder="Search.." id="search">
+              <button type="submit" class="searchBTN"><i class="fa fa-search"></i></button>
+            </div>
           </nav>
         </div>
       </div>
@@ -42,10 +46,6 @@
       </h1>
     </header>
     <main class="container container-fluid mt-5">
-      <div>{{!-- Josh added search bar --}}
-        <input type="text" placeholder="Search.." id="search">
-        <button type="submit" class="searchBTN"><i class="fa fa-search"></i></button>
-      </div>
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>

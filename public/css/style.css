@@ -14,23 +14,14 @@ footer {
   background-size: 100%;
 }
 
-footer {
-  color: white;
-  height: 10%;
-  font-family: 'Public Sans', sans-serif;
-  padding: 8px;
-  margin: 8px;
-  display: grid;
-  justify-content: start;
-}
+footer{
+  color:white;
+  height:10%;
+  font-family: 'Public Sans',sans-serif;
+  padding:8px;
+  display:grid;
+  justify-content:start;
 
-footer {
-  color: white;
-  height: 10%;
-  font-family: 'Public Sans', sans-serif;
-  padding: 8px;
-  display: grid;
-  justify-content: start;
 }
 
 .image {
@@ -40,15 +31,17 @@ footer {
   background-repeat: no-repeat;
 }
 
-.navbar-item {
-  color: white;
-  font-family: 'Public Sans', sans-serif;
+
+.navbar-item{
+color:white;
+font-family: 'Public Sans',sans-serif;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-evenly;
-  background: none;
+.navbar{
+  display:flex;
+  justify-content: space-evenly ;
+  background:none;
+
 }
 
 #title {
@@ -94,8 +87,19 @@ footer {
   color: black;
 }
 
-#userID {
-  background-color: rgb(164, 204, 172);
+.searchResults{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchImage{
+  width: 200px;
+}
+
+#userID{
+  background-color: rgb(189, 221, 217);
+
 }
 
 #title {

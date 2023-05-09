@@ -32,14 +32,6 @@ const sess = {
   })
 };
 
-//Configure OpenAI
-const configuration = new openai.Configuration({
-  organization: process.env.OPENAI_ORG,
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-const openaiapi = new openai.OpenAIApi(configuration);
-
 app.use(session(sess));
 // app.use(cors);
 

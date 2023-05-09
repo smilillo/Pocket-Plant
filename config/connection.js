@@ -1,4 +1,3 @@
-//finished code
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
