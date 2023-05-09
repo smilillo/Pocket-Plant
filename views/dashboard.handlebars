@@ -1,16 +1,22 @@
-<h2>Your Dashboard</h2>
+<h2>Dashboard</h2>
+<div>
+    {{!-- not yet working, path error --}}
+    <a class="newpost-link" href="/dashboard/new"><button class="button" type="submit">Post
+            Something!</button></a>
+</div>
 {{#if posts.length}}
 <section>
     {{#each posts as |post|}}
-    {{> post-info post}}
+      {{> post-info post}}
     {{/each}}
     {{#each comments as |comment|}}
-        {{> comments comment}}
+      {{> comments comment}}
     {{/each}}
 </section>
 {{else}}
 <p>Nothing has been posted yet</p>
 {{/if}}
+
 <div>
     {{!-- not yet working, path error --}}
     <a class="newpost-link" href="/dashboard/new"><button type="submit" class="button" id="new-post-btn">Post Something!</button></a>

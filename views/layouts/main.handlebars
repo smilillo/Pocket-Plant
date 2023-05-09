@@ -23,7 +23,6 @@
           <nav class="navbar" class="is-justify-content-space-between" role="navigation" aria-label="main navigation">
             <a class="navbar-item" href="/" style="background:none">Home</a>
             <a class="navbar-item" href="/dashboard" style="background:none">Dashboard</a>
-            <a class="navbar-item" href="/browse" style="background:none">Browse</a>
             <a class="navbar-item" href="/about-us" style="background:none">About Us</a>
             {{!-- 'browse' get request needs to be created still --}}
             {{#if loggedIn}}
@@ -31,20 +30,21 @@
             {{else}}
             <a class="navbar-item" href="/login" style="background:none">Login</a>
             {{/if}}
+            <div>{{!-- search bar --}}
+              <input type="text" placeholder="Search.." id="search">
+              <button type="submit" class="searchBTN"><i class="fa fa-search"></i></button>
+            </div>
           </nav>
         </div>
       </div>
       <h1 id="title">
-        <div><p id="welcome">Welcome to</p>
-        <a id="pocketPlant" href="/">Pocket Plant</a>
+        <div>
+          <p id="welcome">Welcome to</p>
+          <a id="pocketPlant" href="/"><strong>Pocket Plant</strong></a>
         </div>
       </h1>
     </header>
     <main class="container container-fluid mt-5">
-      <div>{{!-- Josh added search bar --}}
-        <input type="text" placeholder="Search.." id="search">
-        <button type="submit" class="searchBTN"><i class="fa fa-search"></i></button>
-      </div>
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
@@ -54,6 +54,7 @@
       <a href="/about-us">About the creators</a>
       <a href="/chat-bot"><img src="/images/tadPole.jpg" id="tadPole"></a>
     </footer>
+    >>>>>>> main
   </div>
 
   <!-- Render script for logged in users only -->

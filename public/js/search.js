@@ -4,11 +4,4 @@ const searchResults = async (event) => {
     document.location.replace(`/search?plant=${plant}`)
 }
 
-// const detailsPage = async (event) => {
-//     event.preventDefault();
-//     const id = document.querySelector('.picRes').id;
-//     document.location.replace(`/search/${id}`)
-// }
-
 document.querySelector('.searchBTN').addEventListener('click', searchResults);
-// document.querySelector('.picRes').addEventListener('click', detailsPage);

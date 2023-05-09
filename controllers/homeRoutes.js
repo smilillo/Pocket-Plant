@@ -3,10 +3,10 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const fetch = require('node-fetch');
-
 const openai = require('openai');
 const api_key_perenula = 'sk-f8iD645a9dc7bada0763'; // key for conner
 require('dotenv').config();
+
 
 router.get('/', (req, res) => {
   Post.findAll({
@@ -27,9 +27,9 @@ router.get('/', (req, res) => {
   })
     .then(data => {
       const posts = data.map((post) => post.get({ plain: true }));
-      res.render('homepage', { 
+      res.render('homepage', {
         posts,
-        loggedIn: req.session.loggedIn,
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {
@@ -125,7 +125,8 @@ const configuration = new openai.Configuration({
 });
 
 const openaiapi = new openai.OpenAIApi(configuration);
-  const messages = req.body.messages;
+  
+    const messages = req.body.messages;
     const model = req.body.model;
     const temp = req.body.temp;
   
@@ -136,6 +137,8 @@ const openaiapi = new openai.OpenAIApi(configuration);
     });
     res.status(200).json({ result: completion.data.choices });
 });
+
+
 
 router.get('/about-us', (req, res) => {
   res.render('about-us');
