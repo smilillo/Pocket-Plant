@@ -3,9 +3,14 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const fetch = require('node-fetch');
+
+const openai = require('openai');
+require('dotenv').config();
+
 // const api_key_perenula = 'sk-o6oE64544d003e774763'; // key for josh
 // const api_key_perenula = 'sk-mQRG6448780fbced2643'; // key for sofia
 const api_key_perenula = 'sk-WQY0645999959cbd7820'; // key for conner
+
 router.get('/', (req, res) => {
   Post.findAll({
     include: [
@@ -36,7 +41,7 @@ router.get('/', (req, res) => {
     })
 });
 
-//innital search
+//inital search
 router.get('/search', async (req, res) => {
   const query = req.query.plant;
   const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&page=1&q=${query}`);
@@ -64,11 +69,15 @@ router.get('/search/:id', async (req, res) => {
 });
 
 router.get('/post/:id', (req, res) => {
-  Post.findOne(req.params.id, {
+  Post.findOne({
+    where: { id: req.params.id },
+    attributes: [
+      'id', 'title', 'post_text'
+    ],
     include: [
       {
         model: User,
-        attributes: ['name'],
+        attributes: ['username'],
       },
       {
         model: Comment,
@@ -111,29 +120,32 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/chat-bot', (req, res) => {
-  res.render('chat-bot')
+  res.render('chat-bot');
+})
+
+router.post('/chat',async (req, res) => {
+
+//Configure OpenAI
+const configuration = new openai.Configuration({
+  organization: process.env.OPENAI_ORG,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
-router.post('/chat', (req, res) => {
+const openaiapi = new openai.OpenAIApi(configuration);
   const messages = req.body.messages;
-  const model = req.body.model;
-  const temp = req.body.temp;
-
-  const completion = openaiapi.createChatCompletion({
-      model: model,
-      messages: messages,
-      temperature: temp,
-  });
-  res.status(200).json({ result: completion.data.choices });
+    const model = req.body.model;
+    const temp = req.body.temp;
+  
+    const completion = await openaiapi.createChatCompletion({
+        model: model,
+        messages: messages,
+        temperature: temp,
+    });
+    res.status(200).json({ result: completion.data.choices });
 });
 
 router.get('/about-us', (req, res) => {
   res.render('about-us');
 });
-
-//renders the aboutUs.handlebars 
-router.get('/aboutUs', (req,res) => {
-  res.render('aboutUs');
-})
 
 module.exports = router;
