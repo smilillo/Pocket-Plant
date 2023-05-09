@@ -29,7 +29,7 @@ TEAM: Chris, Jaime, Josh, Ruth, Sofie
 -Express\
 -bcrypt\
 -Handlebars\
--OpenAI\
+-OpenAI
 
 ## Contributors 
 Chris Adams GitHub: [TrapAdams](https://github.com/TrapAdams)\

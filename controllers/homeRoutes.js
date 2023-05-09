@@ -41,7 +41,7 @@ router.get('/', (req, res) => {
     })
 });
 
-//innital search
+//inital search
 router.get('/search', async (req, res) => {
   const query = req.query.plant;
   const response = await fetch(`https://perenual.com/api/species-list?page=1&key=${api_key_perenula}&page=1&q=${query}`);
@@ -69,11 +69,15 @@ router.get('/search/:id', async (req, res) => {
 });
 
 router.get('/post/:id', (req, res) => {
-  Post.findOne(req.params.id, {
+  Post.findOne({
+    where: { id: req.params.id },
+    attributes: [
+      'id', 'title', 'post_text'
+    ],
     include: [
       {
         model: User,
-        attributes: ['name'],
+        attributes: ['username'],
       },
       {
         model: Comment,
@@ -120,7 +124,6 @@ router.get('/chat-bot', (req, res) => {
 })
 
 router.post('/chat',async (req, res) => {
-  console.log(process.env.OPENAI_API_KEY);
 
 //Configure OpenAI
 const configuration = new openai.Configuration({
@@ -146,10 +149,5 @@ const openaiapi = new openai.OpenAIApi(configuration);
 router.get('/about-us', (req, res) => {
   res.render('about-us');
 });
-
-//renders the aboutUs.handlebars 
-router.get('/aboutUs', (req,res) => {
-  res.render('aboutUs');
-})
 
 module.exports = router;
