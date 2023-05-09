@@ -1,10 +1,12 @@
-<div class="searchResults">
-  <div class="searchImg">
-    <img src="{{plant.default_image.small_url}}" alt="" id ="{{plant.id}}">
-  </div>
-  <h2>{{plant.common_name}}</h2>
-  <h3>Sunlight: {{plant.sunlight}}</h3>
-  <h3>Watering: {{plant.watering}}</h3>
-  <h4>Invasive: {{plant.invasive}}</h4>
-  <h4>Indoor: {{plant.indoor}}</h4>
+<div class="selectedPlant">
+  <p>
+   {{plant.common_name}} 
+</p>
+  <img src="{{plant.default_image.small_url}}" alt="" id="{{plant.id}}" class="selectedImg">
+<div>
+  Sunlight:{{plant.sunlight}} <br>
+  Watering:{{plant.watering}} <br>
+  Invasive: {{plant.invasive}} <br>
+  Indoor: {{plant.indoor}} 
+</div>
 </div>
