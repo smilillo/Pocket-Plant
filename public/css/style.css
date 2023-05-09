@@ -46,14 +46,46 @@ font-family: 'Public Sans',sans-serif;
   color:black;
 }
 
-.searchResults{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.selectedPlant{
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  align-content:center;
+  height:500px;
+ 
+}
+ 
+.selectedPlant p , .selectedPlant div{
+background-color:white;
+width:350px;
+
 }
 
-.searchImage{
-  width: 200px;
+.selectedImg{
+  width:350px;
+  border: 3px solid white;
+}
+
+.userSearch{
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  overflow:scroll;
+  height:500px;
+  gap:1rem;
+  padding:1rem;
+ 
+  }
+
+.userSearch img{
+  width:250px;
+  border: 3px solid white;
+   /* width:30%; */
+}
+
+.userSearch a{
+  color:white;
 }
 
 #userID{
