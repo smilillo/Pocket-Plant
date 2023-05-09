@@ -3,10 +3,8 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const fetch = require('node-fetch');
-
 const openai = require('openai');
 require('dotenv').config();
-
 // const api_key_perenula = 'sk-o6oE64544d003e774763'; // key for josh
 // const api_key_perenula = 'sk-mQRG6448780fbced2643'; // key for sofia
 const api_key_perenula = 'sk-WQY0645999959cbd7820'; // key for conner
@@ -132,7 +130,8 @@ const configuration = new openai.Configuration({
 });
 
 const openaiapi = new openai.OpenAIApi(configuration);
-  const messages = req.body.messages;
+  
+    const messages = req.body.messages;
     const model = req.body.model;
     const temp = req.body.temp;
   

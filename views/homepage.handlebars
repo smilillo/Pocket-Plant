@@ -1,6 +1,6 @@
  <h1 style=" font-family: 'Public Sans',sans-serif;"><strong>Recent Posts</strong></h1>
 <div>
   {{#each posts as |post|}}
-  {{post-info.post }}
+    {{> post-info post }}
   {{/each}}
 </div>
