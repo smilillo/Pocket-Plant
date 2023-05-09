@@ -2,16 +2,19 @@
 {{#if posts.length}}
 <section>
     {{#each posts as |post|}}
-    {{post-info post}}
+      {{> post-info post}}
+    {{/each}}
+    {{#each comments as |comment|}}
+      {{> comments comment}}
+    {{/each}}
 </section>
-{{/each}}
 {{else}}
 <p>Nothing has been posted yet</p>
 {{/if}}
 <div>
     {{!-- not yet working, path error --}}
-    <a class="newpost-link" href="/dashboard/new"><button>Post Something!</button></a>
-    <a class="editpost-link" href="/edit-post"><button>Edit Post</button></a>
+    <a class="newpost-link" href="/dashboard/new"><button type="submit" class="button" id="new-post-btn">Post Something!</button></a>
+    <a class="editpost-link" href="/edit-post"><button type="submit" class="button" id="edit-post-btn">Edit Post</button></a>
 </div>
 
 {{!--

@@ -1,3 +1,4 @@
+// ChatBot Tutorial Used - https://danielkhv.com/blog/createyourownchatbot
 //Get reference to our submit button and chatbot field
 const submit = document.getElementById("submit");
 const responseField = document.getElementById("response");
@@ -8,12 +9,9 @@ const loading = document.getElementById("spinner");
 let promptResponses = [];
 
 //Our call to the API
+console.log("I'm here");
 const generateResponse = async () => {
-    //Get the user input field value
-    //Set loading spinner
-    loading.classList.remove("visually-hidden");
-    submit.classList.add("visually-hidden");
-    const input = userInput.value;
+    const input = userInput.value.trim();
     const response = await fetch('/chat', {
         method: 'POST',
         body: JSON.stringify({
@@ -27,8 +25,8 @@ const generateResponse = async () => {
     });
 
     const responseData = await response.json();
+    console.log(responseData);
     const message = responseData.result[0].message.content;
-    console.log(message);
 
     //Store our previous messages
     promptResponses.push({question: input, response: message});
@@ -39,11 +37,6 @@ const generateResponse = async () => {
     historyElement.innerHTML = `<li class="list-group-item">Prompt: ${input}</li>
     <li class="list-group-item"> Response: ${message}</li>`;
     chatHistory.append(historyElement);
-
-    //Stop loading spinner
-    loading.classList.add("visually-hidden");
-    submit.classList.remove("visually-hidden");
-
 }
 
 //Assign onclick method
