@@ -84,6 +84,7 @@ font-family: 'Public Sans',sans-serif;
 
 .footerImg{
   width:10%;
+}
 
 .postTitle {
   font-size: 1.25rem;
@@ -129,7 +130,7 @@ width:350px;
 }
 
 .userSearch a{
-  color:white;
+  color:black;
 }
 
 #userID{
