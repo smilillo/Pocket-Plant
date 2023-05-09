@@ -43,7 +43,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     include: [
       {
         model: User,
-        attributes: ['name'],
+        attributes: ['username'],
       },
       {
         model: Comment,
@@ -72,7 +72,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  res.render('new-post');
+  res.render('new_post');
 });
 
 module.exports = router;

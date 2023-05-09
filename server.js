@@ -4,6 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const openai = require('openai');
+
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -31,6 +33,7 @@ const sess = {
 };
 
 app.use(session(sess));
+// app.use(cors);
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
@@ -43,5 +46,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log(`Server is listening at http://localhost:${PORT}/`));
 });
